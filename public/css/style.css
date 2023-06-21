@@ -241,7 +241,7 @@ img {
   line-height: 43px;
   text-align: left;
   margin: 0;
-  padding: 40px;
+  padding: 20px 0;
 }
 @media only screen and (min-width: 768px) {
   .profile__title {
@@ -317,6 +317,7 @@ img {
   align-items: center;
   color: #152617;
   background-color: #fff;
+  padding: 20px;
 }
 
 .technologies__title {
@@ -328,7 +329,7 @@ img {
   text-align: left;
   align-self: flex-start;
   margin: 0;
-  padding: 20px 30px;
+  padding: 20px 0;
 }
 
 .technologies__list {
@@ -389,7 +390,7 @@ img {
   line-height: 43px;
   text-align: left;
   margin: 0;
-  padding: 20px 30px;
+  padding: 20px 0;
 }
 
 .project-card {
@@ -677,6 +678,31 @@ img {
   flex-direction: column;
   background: #152617;
   padding-bottom: 30px;
+  height: auto;
+}
+
+.project__back-button {
+  display: block;
+  font-family: "Raleway", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: left;
+  color: #E3E4E6;
+  padding: 20px;
+  margin: 0;
+  text-decoration: none;
+}
+.project__back-button:hover, .project__back-button:focus {
+  color: #87F962;
+}
+.project__back-button:active {
+  color: #B8F5A5;
+}
+
+.project__back-button span {
+  padding: 0 20px;
 }
 
 @media only screen and (min-width: 768px) {
