@@ -1,0 +1,10 @@
+<section class="projects">
+  <div class="container">
+    <h2 class="projects__title">Recent projects</h2>
+    <div class="project-grid">
+      {% for project in collections.projects %}
+        {% include "project-card.njk" %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

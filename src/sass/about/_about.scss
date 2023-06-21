@@ -1,0 +1,29 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.about__title {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 52px;
+    line-height: 47px;
+    text-align: left;
+    color: #152617;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.about__text {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 28px;
+    text-align: left;
+    color: #152617;
+    margin: 0;
+    padding: 20px 0;
+}

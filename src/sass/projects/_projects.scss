@@ -1,0 +1,125 @@
+@import "../breakpoints/breakpoints";
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #152617;
+    color: #fff;
+    padding: 20px;
+}
+
+.projects__title {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 43px;
+    text-align: left;
+    margin: 0;
+    padding: 20px 30px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 40px 0;
+
+    @include sm {
+        margin: 0;
+    }
+}
+
+.project-card__tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 12px;
+}
+
+.project-card__tag {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 18px;
+    color: #fff;
+    padding: 10px;
+    margin: 8px;
+    background-color: #50664b;
+}
+
+.project-card__title {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 28px;
+    text-align: left;
+    padding: 20px;
+    margin: 0;
+
+    @include xl {
+        box-sizing: border-box;
+        min-height: 96px;
+    }
+}
+
+.project-card__title a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-within {
+        color: #87F962;
+    }
+
+    &:active {
+        color: #B8F5A5;
+    }
+}
+
+.project-card__summary {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 18px;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    padding-top: 0;
+
+    @include xl {
+        min-height: 180px;
+    }
+}
+
+.project-card__link {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-decoration: none;
+    color: #E3E4E6;
+    border: 1px solid rgba(227, 228, 230, 0.55);
+    border-radius: 100px;
+    padding: 8px 16px;
+    margin: 0 20px;
+
+    &:hover,
+    &:focus-within {
+        color: #87F962;
+        border: 1px solid #87F962;
+    }
+
+    &:active {
+        color: #000;
+        border: 1px solid #000;
+        background-color: #B8F5A5;
+    }
+}

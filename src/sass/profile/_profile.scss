@@ -1,0 +1,91 @@
+@import "../breakpoints/breakpoints";
+
+.profile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #152617;
+    color: #fff;
+    padding: 0 0 20px 0;
+}
+
+.profile__title {
+    position: absolute;
+    top: 250px;
+    z-index: 2;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 50px;
+    line-height: 43px;
+    text-align: left;
+    margin: 0;
+    padding: 40px;
+
+    @include md {
+        position: static;
+        padding: 40px 0;
+    }
+}
+
+.profile__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @include md {
+        flex-direction: row;
+    }
+}
+
+.profile__card {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.035em;
+}
+
+.profile__text {
+    padding: 20px 40px;
+    margin: 0;
+    text-align: left;
+
+    @include md {
+        padding: 10px 0 10px 20px;
+    }
+}
+
+.profile__text--highlight {
+    font-weight: 900;
+}
+
+.profile__image {
+    display: block;
+    object-fit: contain;
+    width: 100%;
+    filter: grayscale(1);
+
+    @include md {
+        object-fit: contain;
+    }
+}
+
+.profile__link {
+    text-decoration: underline;
+    color: #B8F5A5;
+
+    &:hover,
+    &:focus-within {
+        color: #87F962;
+    }
+
+    &:active {
+        color: #8EA589;
+    }
+}

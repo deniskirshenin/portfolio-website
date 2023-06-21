@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="I'm a Frontend software developer who builds sites and apps that help people reach their personal and professional goals."/>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <title>Sedona</title>
+</head>
+<body>
+    <header class="header container">
+    <nav class="header__nav">
+        <a class="header__brand" href="/">DK</a>
+        <div class="header__nav-wrapper">
+            <ul class="header__nav-list">
+            <button class="header__nav-button--close"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+            <li class="header__nav-item">
+                <a class="header__nav-link" href="/">Home</a>
+            </li>
+            <li class="header__nav-item">
+                <a class="header__nav-link" href="/about">About</a>
+            </li>
+            <li class="header__nav-item">
+                <a class="header__nav-link" href="/projects">Projects</a>
+            </li>
+            <li class="header__nav-item">
+                <a class="header__nav-link" href="/contact">Hire me</a>
+            </li>
+        </ul>
+        </div>
+        <button class="header__nav-button--open">
+            <i class="fa-sharp fa-solid fa-bars"></i>
+        </button>
+    </nav>
+</header>
+    <main>
+      
+<div class="project">
+  <h2 class="project__heading">Sedona</h2>
+  <div class="project__image-wrapper">
+      <img class="project__image" src="/images/sedona.jpeg" alt="Screenshots of sedona website">
+  </div>
+  <div class="project__content prose">
+    <h3>Project idea</h3>
+<p>It is my first static website I built from scratch using Figma design. This is landing website about travelling in Sedona. Initially it was built with just HTML and CSS. With developing my skills and learning about component-driven development approach while learning React and Next.js I learnt about static-site generators. I decided to use this website as template to learn about SSG and added 11ty to this project.</p>
+<h3>Weapon of choice</h3>
+<p>As I mentioned this project was built with just HTML and CSS. As for styling I moved from CSS to SASS as it is one of the most popular CSS preprocessor which I tried for first time. While choosing SSG for it I was looking througn Next.js and Gatsby which are React-based, but they appeared as overkill for it - Next.js is more suitable for dynamic apps and Gatsby seemed like too complex for this case. Discovering documentation of Next.js and Gatsby put me on the path of JAM concept. Surfing JAMstack website I learnt about big amount available SSG. I was choosing between Jekyll and 11ty. I chose 11ty because of its simplicity and because it was easier for me to understand main concepts as it was based on Node.js. And I totally loved the community-based documentation and tutorials.</p>
+<h3>Problems, process, improvements</h3>
+<p>Like every time you start learning something new on your own you have lots of questions and sometimes fell lost. I decided to go step by step:</p>
+<ul>
+<li>Research about SSG and finding the most suitable for my case</li>
+<li>Configuration of 11ty and npm</li>
+<li>Structuring project with template files and then divide my big HTML files into Nunjucks template blocks</li>
+<li>Structuring CSS by dividing big CSS file into SASS blocks</li>
+<li>Adding pinch of JS for interactivity</li>
+</ul>
+<p>I'm still working on optimizing images, I got stucked with using 11ty plugin for image optimization in <code>for</code> loops.
+Also I want to improve navigation and pagination components.</p>
+<h3>Lessons Learned</h3>
+<p>I wanted just to refactor my old code 😅. But this took me on a very cool journey. I learnt a lot about SSG and how to build static websites quicker that just write HTML. Learnt that I love to learn. I spent hours looking throung new technologies, trying out tutorials and deciding which is right for this case. I'm stille positive that my code isn't perfect. And that sooner or later it will be changed again as I learn more. Never stop refactoring!</p>
+
+  </div>
+</div>
+    </main>
+  <footer class="footer">
+    <a>&copy; DK 2023</a>
+</footer>
+</body>
+<script src="/js/script.js"></script>
+</html>

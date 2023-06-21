@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="I'm a Frontend software developer who builds sites and apps that help people reach their personal and professional goals."/>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;800&display=swap" rel="stylesheet">
+  <title>Kekstagram</title>
+</head>
+<body>
+    <header class="header container">
+    <nav class="header__nav">
+        <a class="header__brand" href="/">DK</a>
+        <div class="header__nav-wrapper">
+            <ul class="header__nav-list">
+            <button class="header__nav-button--close"><i class="fa-sharp fa-solid fa-xmark"></i></button>
+            <li class="header__nav-item">
+                <a class="header__nav-link" href="/">Home</a>
+            </li>
+            <li class="header__nav-item">
+                <a class="header__nav-link" href="/about">About</a>
+            </li>
+            <li class="header__nav-item">
+                <a class="header__nav-link" href="/projects">Projects</a>
+            </li>
+            <li class="header__nav-item">
+                <a class="header__nav-link" href="/contact">Hire me</a>
+            </li>
+        </ul>
+        </div>
+        <button class="header__nav-button--open">
+            <i class="fa-sharp fa-solid fa-bars"></i>
+        </button>
+    </nav>
+</header>
+    <main>
+      
+<div class="project">
+  <h2 class="project__heading">Kekstagram</h2>
+  <div class="project__image-wrapper">
+      <img class="project__image" src="/images/kekstagram.jpeg" alt="Screenshots of kekstagram app">
+  </div>
+  <div class="project__content prose">
+    <h3>Problem Solved</h3>
+<p>This is my first JavaScript project. Kekstagram is an image viewing service. Users are given the opportunity to upload their own photos or view photos previously uploaded by other users.</p>
+<p>Users should be able to:</p>
+<ul>
+<li>Upload a new image to the site and filling in information about it, change size of an image, apply filter on image, change filter intensity with slider</li>
+<li>Submit data to server using POST method, when data is submitted succesfully image upload form resets to default, if unsuccesful</li>
+<li>Receive an error message when the contact form is submitted if:</li>
+<li>The Hashtag is more than 5 hashtags, if hashtag is more than 20 symbols including &quot;#&quot;</li>
+<li>The Comment is more than 140 symbols</li>
+<li>Images are loaded from server. On click on thumbnail big picture is opened. At one time only 5 comments are shown. Click on &quot;Load more&quot; show 5 more comments</li>
+<li>Filter shown thumbnails on main page by click on &quot;Default&quot;, &quot;Random&quot;, &quot;Discussed&quot;</li>
+</ul>
+<h3>Weapon of choice</h3>
+<ul>
+<li>Semantic HTML5 markup</li>
+<li>CSS custom properties</li>
+<li>Flexbox</li>
+<li>CSS Grid</li>
+<li>Vanilla JS</li>
+<li>Fetch API</li>
+<li>NoUiSlider - lightweight JavaScript range slider with full touch support</li>
+<li>PristineJs - Vanilla javascript form validation micro-library</li>
+</ul>
+<h3>Problems, process, improvements</h3>
+<ul>
+<li>I started with organasing my code using modules. Main.js is my entry point, utils.js is used for utility functions, api.js to proceed data, and the rest is each module for each feature.</li>
+<li>Then I connected data with thumbnail module to create list of thumbnail pics.</li>
+<li>After this I built function that render full post with big picture, comments and likes on click thumbnail.</li>
+<li>Then I moved to upload image preview function. I added function to preview uploaded image. After I added NoUiSlider to change intensity of applied filter.</li>
+<li>After uploading we need to submit our image to server. To validate submit form I used PristineJs. On successful submit form is reseted and on unsuccessful it remains in last state. I used FormData to collect data from form and send it to server.</li>
+<li>Finally I added function to filter images when &quot;Default&quot;, &quot;Random&quot; and &quot;Discussed&quot; are clicked. And optimized loading of images with debounce and throttling functions when changing filter.</li>
+</ul>
+<h3>Lessons Learned</h3>
+<p>I learned how to organise code with ES-modules, closures, event listeners and DOM, how to fetch API. As well I got strong fundamental knowledge of JS concepts used in web development.</p>
+
+  </div>
+</div>
+    </main>
+  <footer class="footer">
+    <a>&copy; DK 2023</a>
+</footer>
+</body>
+<script src="/js/script.js"></script>
+</html>
