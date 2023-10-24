@@ -8,7 +8,7 @@ type Props = {
 
 const Skill = ({directionLeft}: Props) => {
   return (
-    <div className='group relative flex cursor-pointer'>
+    <div className='flex'>
         <motion.img 
             initial={{
                 x: directionLeft ? -200 : 200,
@@ -19,14 +19,9 @@ const Skill = ({directionLeft}: Props) => {
                 x: 0,
                 opacity: 1
             }}
-            src="/hero.jpg" alt="" width={100} height={100} 
-            className='rounded-full border border-gray-500 object-cover h-24 w-24 xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out'
+            src="/hero.jpg" alt="" width={20} height={20} 
+            className='rounded-full border border-gray-500 object-cover h-12 w-12 xl:w-16 xl:h-16'
             />
-            <div className='absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white h-24 w-24 xl:w-32 xl:h-32 rounded-full'>
-                <div className='flex items-center justify-center h-full'>
-                    <p className='text-3xl font-bold text-black opacity-100'>100%</p>
-                </div>
-            </div>
     </div>
   );
 };

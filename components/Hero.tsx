@@ -1,51 +1,64 @@
 "use client"
 
 import React from 'react';
-import { Cursor, Typewriter, useTypewriter } from 'react-simple-typewriter';
-import BackgroundCircles from './BackgroundCircles';
-import Image from 'next/image';
+import { useTypewriter } from 'react-simple-typewriter';
 import Link from 'next/link';
+import { PageInfo } from '@/typings';
+import { motion } from 'framer-motion';
+import { ArrowRightIcon } from '@heroicons/react/24/solid';
 
-type Props = {}
+type Props = {
+    pageInfo: PageInfo;
+}
 
-function Hero({}: Props) {
+function Hero({pageInfo}: Props) {
     const [text,count] = useTypewriter({
-        words: ['<const name = Denis>', 'function Develop(){}', 'Drink-coffee.tsx'],
-        loop: true,
+        words: [`Hey, I'm ${pageInfo.name}`],
+        loop: 1,
         delaySpeed: 2000,
+        
     });
   return (
     <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
-        <BackgroundCircles />
-        <Image 
-            className='relative rounded-full h-32 w-32 mx-auto object-cover'
-            src='/hero.jpg' alt='' width={320} height={320}
-        />
-        <div className='z-20'>
-            <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>Frontend Developer</h2>
-            <h1 className='text-5xl lg:text-6xl font-semibold px-10'>
-                <span className='mr-3'>{text}</span>
-                <Cursor cursorColor='#f7ab0a' />
+        <div className='flex flex-col'>
+            <h1 className='text-5xl lg:text-7xl font-bold px-10 uppercase'>
+                {text}
             </h1>
-            <div className='pt-5'>
-                <Link href='#about'>
-                    <button className='heroButton'>About</button>
-                </Link>
-                <Link href='#experience'>
-                    <button className='heroButton'>Experience</button>
-                </Link>
-                <Link href='#skills'>
-                    <button className='heroButton'>Skills</button>
-                </Link>
-                <Link href='#projects'>
-                    <button className='heroButton'>Projects</button>
-                </Link>
-                
-                
-                
-                
-            </div>
+            <motion.h2 
+            initial={{
+                opacity: 0,
+                y: 200,
+            }}
+            whileInView={{
+                opacity: 1,
+                y: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{duration: 3}}
+            className='text-6xl uppercase font-bold text-gray-500 pb-2 px-10 tracking-[15px]'>{pageInfo.role}</motion.h2>
         </div>
+        <motion.div 
+            initial={{
+                opacity: 0,
+                y: 200,
+            }}
+            whileInView={{
+                opacity: 1,
+                y: 0,
+            }}
+            transition={{duration: 3}}
+            viewport={{ once: true }}
+            className='flex space-x-5'>
+            <Link 
+                className='flex items-center space-x-2 border border-transparent hover:border-b-black transition-all' href="#about">
+                <span>About</span> 
+                <ArrowRightIcon className='w-8 h-8' /> 
+            </Link>
+            <Link className='flex items-center space-x-2 border border-transparent hover:border-b-black transition-all' href='#projects'>
+                <span>Projects</span> 
+                <ArrowRightIcon className='w-8 h-8'/>
+            </Link>
+        </motion.div>
     </div>
   )
 };

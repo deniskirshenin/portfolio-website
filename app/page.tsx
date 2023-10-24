@@ -5,33 +5,74 @@ import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
 import WorkExperience from '@/components/WorkExperience';
+import { getPageInfo, getProjects, getSocials } from '@/sanity/sanity-utils';
+import { Experience, PageInfo, Project, Skill, Social } from '@/typings';
+import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import AnimatedCursor from 'react-animated-cursor';
 
-export default function Home() {
+type Props = {
+  pageInfo: PageInfo;
+  aboutInfo: PageInfo;
+  skills: Skill[];
+  projects: Project[];
+  socials: Social[];
+}
+
+export default async function Home({ pageInfo, aboutInfo, skills, projects, socials }: Props) {
+  const socialsData = await getSocials();
+  const pageInfoData = await getPageInfo();
+  const projectsData = await getProjects();
   return (
-    <main className='bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 relative scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#f7ab0a]/80'>
-      <Header />
+    <main className='bg-white text-black h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 relative'>
+      <AnimatedCursor 
+      innerSize={5}
+      outerSize={35}
+      color='255, 255, 255'
+      outerAlpha={1}
+      innerScale={0.7}
+      outerScale={2}
+      innerStyle={{
+        mixBlendMode: 'exclusion' 
+      }}
+      outerStyle={{
+        mixBlendMode: 'exclusion'
+      }}
+      clickables={[
+        'a',
+        'input[type="text"]',
+        'input[type="email"]',
+        'input[type="number"]',
+        'input[type="submit"]',
+        'input[type="image"]',
+        'label[for]',
+        'select',
+        'textarea',
+        'button',
+        '.link'
+      ]}/>
+      <Header socials={socialsData} />
 
       <section id="hero" className='snap-center'>
-        <Hero />
+        <Hero pageInfo={pageInfoData} />
       </section>
 
       <section id="about" className='snap-center'>
-        <About />
+        <About aboutInfo={pageInfoData} />
       </section>
 
-      <section id="experience" className='snap-center'>
+      {/* <section id="experience" className='snap-center'>
         <WorkExperience />
       </section>
 
       <section id="skills" className='snap-start'>
         <Skills />
-      </section>
+      </section> */}
 
       {/* Projects */}
       <section id="projects" className='snap-start'>
-        <Projects />
+        <Projects projects={projectsData} />
       </section>
 
       {/* Contact Me */}
@@ -46,4 +87,4 @@ export default function Home() {
       </Link>
     </main>
   )
-}
+};
