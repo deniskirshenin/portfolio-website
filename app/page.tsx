@@ -3,11 +3,8 @@ import ContactMe from '@/components/ContactMe';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
-import Skills from '@/components/Skills';
-import WorkExperience from '@/components/WorkExperience';
 import { getPageInfo, getProjects, getSocials } from '@/sanity/sanity-utils';
-import { Experience, PageInfo, Project, Skill, Social } from '@/typings';
-import { GetStaticProps } from 'next';
+import { PageInfo, Project, Skill, Social } from '@/typings';
 import Image from 'next/image';
 import Link from 'next/link';
 import AnimatedCursor from 'react-animated-cursor';
@@ -64,20 +61,10 @@ export default async function Home() {
         <About aboutInfo={pageInfoData} />
       </section>
 
-      {/* <section id="experience" className='snap-center'>
-        <WorkExperience />
-      </section>
-
-      <section id="skills" className='snap-start'>
-        <Skills />
-      </section> */}
-
-      {/* Projects */}
       <section id="projects" className='snap-start'>
         <Projects projects={projectsData} />
       </section>
 
-      {/* Contact Me */}
       <section id="contact" className='snap-start'>
         <ContactMe contacts={pageInfoData} />
       </section>

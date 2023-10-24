@@ -37,7 +37,7 @@ const Projects = ({projects}: Props) => {
                             }}
                             viewport={{ once: true }}
                             className='w-full h-full object-contain'
-                            src="/hero.jpg" alt="" width={300} height={200}
+                            src={project.image} alt="" width={300} height={200}
                         />
                     </div>
                     

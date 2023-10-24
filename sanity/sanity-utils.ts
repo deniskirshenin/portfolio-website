@@ -1,5 +1,4 @@
 import { createClient, groq } from "next-sanity";
-import { NextRequest } from "next/server";
 
 const client = createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
@@ -19,6 +18,7 @@ const pageInfo = groq`
 const projectsInfo = groq`
     *[_type == "project"] {
         ...,
+        "image":image.asset->url,
         technologies[]->
     }
 `;
