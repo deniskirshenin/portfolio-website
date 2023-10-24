@@ -1,4 +1,5 @@
 import { createClient, groq } from "next-sanity";
+import { NextRequest } from "next/server";
 
 const client = createClient({
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
@@ -23,13 +24,14 @@ const projectsInfo = groq`
 `;
 
 export async function getSocials() {
-    return client.fetch(socials);
-}
+    return client.fetch(socials, {cache: 'force-cache'});
+};
 
 export async function getPageInfo() {
-    return client.fetch(pageInfo);
-}
+    return client.fetch(pageInfo, {cache: 'force-cache'});
+};
 
 export async function getProjects() {
-    return client.fetch(projectsInfo);
-}
+    return client.fetch(projectsInfo, {cache: 'force-cache'});
+};
+

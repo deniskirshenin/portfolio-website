@@ -15,15 +15,17 @@ import AnimatedCursor from 'react-animated-cursor';
 type Props = {
   pageInfo: PageInfo;
   aboutInfo: PageInfo;
+  contacts: PageInfo;
   skills: Skill[];
   projects: Project[];
   socials: Social[];
 }
 
-export default async function Home({ pageInfo, aboutInfo, skills, projects, socials }: Props) {
+export default async function Home() {
   const socialsData = await getSocials();
   const pageInfoData = await getPageInfo();
   const projectsData = await getProjects();
+
   return (
     <main className='bg-white text-black h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 relative'>
       <AnimatedCursor 
@@ -77,7 +79,7 @@ export default async function Home({ pageInfo, aboutInfo, skills, projects, soci
 
       {/* Contact Me */}
       <section id="contact" className='snap-start'>
-        <ContactMe />
+        <ContactMe contacts={pageInfoData} />
       </section>
       <Link href="#hero">
         <footer className='sticky bottom-5 w-full'>

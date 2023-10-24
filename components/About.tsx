@@ -40,7 +40,7 @@ const About = ({aboutInfo}: Props) => {
         }}
         >
             <h3 className='uppercase tracking-[20px] text-black text-2xl lg:pb-3 lg:border-b-4 lg:border-b-black'>About</h3>
-            <p className='text-base'>{aboutInfo?.backgroundInformation}</p>
+            <p className='text-base text-black'>{aboutInfo.backgroundInformation}</p>
         </motion.div>
         <motion.div
             initial={{
