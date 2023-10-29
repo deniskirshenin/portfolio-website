@@ -24,14 +24,14 @@ const projectsInfo = groq`
 `;
 
 export async function getSocials() {
-    return client.fetch(socials, {cache: 'force-cache'});
+    return client.fetch(socials, {cache: 'no-cache'});
 };
 
 export async function getPageInfo() {
-    return client.fetch(pageInfo, {cache: 'force-cache'});
+    return client.fetch(pageInfo, {cache: 'no-cache'});
 };
 
 export async function getProjects() {
-    return client.fetch(projectsInfo, {cache: 'force-cache'});
+    return client.fetch(projectsInfo, {cache: 'no-cache'});
 };
 

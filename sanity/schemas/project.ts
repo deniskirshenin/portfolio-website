@@ -32,6 +32,11 @@ const project = {
       name: "linkToBuild",
       title: "LinkToBuild",
       type: "url",
+    },
+    {
+      name: "linkToDemo",
+      title: "LinkToDemo",
+      type: "url",
     }
   ],
 };
