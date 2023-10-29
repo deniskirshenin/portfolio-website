@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { Orbitron, Red_Rose } from 'next/font/google'
-import './globals.css'
+import { Orbitron } from 'next/font/google'
+import '../globals.css'
 
 const orbitron = Orbitron({ subsets: ['latin'] })
 

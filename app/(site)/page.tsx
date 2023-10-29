@@ -3,8 +3,8 @@ import ContactMe from '@/components/ContactMe';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
-import { getPageInfo, getProjects, getSocials } from '@/sanity/sanity-utils';
-import { PageInfo, Project, Skill, Social } from '@/typings';
+import { getPageInfo, getProjects, getSkills, getSocials } from '@/sanity/sanity-utils';
+import { PageInfo, Project, SkillType, Social } from '@/typings';
 import Image from 'next/image';
 import Link from 'next/link';
 import AnimatedCursor from 'react-animated-cursor';
@@ -13,7 +13,7 @@ type Props = {
   pageInfo: PageInfo;
   aboutInfo: PageInfo;
   contacts: PageInfo;
-  skills: Skill[];
+  skills: SkillType[];
   projects: Project[];
   socials: Social[];
 }
@@ -22,6 +22,7 @@ export default async function Home() {
   const socialsData = await getSocials();
   const pageInfoData = await getPageInfo();
   const projectsData = await getProjects();
+  const skillsData = await getSkills();
 
   return (
     <main className='bg-white text-black h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 relative'>
@@ -62,7 +63,7 @@ export default async function Home() {
       </section>
 
       <section id="projects" className='snap-start'>
-        <Projects projects={projectsData} />
+        <Projects projects={projectsData} skills={skillsData}/>
       </section>
 
       <section id="contact" className='snap-start'>

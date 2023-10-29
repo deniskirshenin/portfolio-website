@@ -3,15 +3,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRightIcon, ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
+import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid';
 import Skills from './Skills';
-import { Project } from '@/typings';
+import { Project, SkillType } from '@/typings';
 
 type Props = {
     projects: Project[];
+    skills: SkillType[];
 };
 
-const Projects = ({projects}: Props) => {
+const Projects = ({projects, skills}: Props) => {
   return (
     <motion.div
         initial={{
@@ -47,7 +48,7 @@ const Projects = ({projects}: Props) => {
                             {" "}{project.title}
                         </h4>
                         <p className='text-lg text-center md:text-left'>{project.summary}</p>
-                        <Skills />
+                        <Skills skills={skills} />
                         <motion.div 
                             initial={{
                                 opacity: 0,

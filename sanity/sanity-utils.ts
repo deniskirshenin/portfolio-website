@@ -23,15 +23,26 @@ const projectsInfo = groq`
     }
 `;
 
+const skills = groq`
+    *[_type == "skill"] {
+        ...,
+        "image":image.asset->url
+    }
+`;
+
 export async function getSocials() {
-    return client.fetch(socials, {cache: 'no-cache'});
+    return client.fetch(socials, {cache: 'no-store'});
 };
 
 export async function getPageInfo() {
-    return client.fetch(pageInfo, {cache: 'no-cache'});
+    return client.fetch(pageInfo, {cache: 'no-store'});
 };
 
 export async function getProjects() {
-    return client.fetch(projectsInfo, {cache: 'no-cache'});
+    return client.fetch(projectsInfo, {cache: 'no-store'});
 };
+
+export async function getSkills() {
+    return client.fetch(skills, {cache: 'no-store'})
+}
 

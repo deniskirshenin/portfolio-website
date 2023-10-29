@@ -27,13 +27,13 @@ export interface PageInfo extends SanityBody {
 
 export interface Technology extends SanityBody {
     _type: "skill";
-    image: Image;
+    image: string;
     title: string;
 };
 
-export interface Skill extends SanityBody {
+export interface SkillType extends SanityBody {
     _type: "skill";
-    image: Image;
+    image: string;
     title: string;
 };
 
