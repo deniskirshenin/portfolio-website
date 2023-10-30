@@ -12,14 +12,17 @@ const socials = groq`
 `;
 
 const pageInfo = groq`
-    *[_type == "pageInfo"][0]
+    *[_type == "pageInfo"][0]{
+        ...,
+        "heroImage":heroImage.asset->url
+    }
 `;
 
 const projectsInfo = groq`
     *[_type == "project"] {
         ...,
         "image":image.asset->url,
-        technologies[]->
+        technologies[]->{..., "image":image.asset->url}
     }
 `;
 
@@ -30,19 +33,36 @@ const skills = groq`
     }
 `;
 
+export async function getProjects() {
+    return client.fetch(projectsInfo, {
+        next: {
+            revalidate: 10
+        }
+    })
+}
+
 export async function getSocials() {
-    return client.fetch(socials, {cache: 'no-store'});
+    return client.fetch(socials, {
+        next: {
+            revalidate: 10
+        }
+    });
 };
 
 export async function getPageInfo() {
-    return client.fetch(pageInfo, {cache: 'no-store'});
+    return client.fetch(pageInfo, {
+        next: {
+            revalidate: 10
+        }
+    });
 };
 
-export async function getProjects() {
-    return client.fetch(projectsInfo, {cache: 'no-store'});
-};
 
 export async function getSkills() {
-    return client.fetch(skills, {cache: 'no-store'})
+    return client.fetch(skills, {
+        next: {
+            revalidate: 10
+        }
+    })
 }
 

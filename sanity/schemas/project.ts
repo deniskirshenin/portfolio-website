@@ -1,13 +1,20 @@
 const project = {
   name: 'project',
-  title: 'Project',
+  title: 'Projects',
   type: 'document',
   fields: [
     {
-      name: "title",
-      title: "Title",
-      description: "Title of the project",
+      name: "name",
+      title: "Name",
       type: "string"
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "name"
+      }
     },
     {
       name: "image",
@@ -16,6 +23,13 @@ const project = {
       options: {
         hotspot: true,
       },
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string"
+        }
+      ]
     },
     {
       name: "summary",
@@ -26,7 +40,7 @@ const project = {
       name: "technologies",
       title: "Technologies",
       type: "array",
-      of: [{ type: "reference", to: { type: "skill"} }],
+      of: [{ type: "reference", to: { type: "skill"} }]
     },
     {
       name: "linkToBuild",

@@ -21,9 +21,9 @@ const About = ({aboutInfo}: Props) => {
             opacity: 1,
         }}
         viewport={{ once: true }}
-        className='flex flex-col-reverse justify-end relative h-screen w-full mx-auto md:text-left md:flex-row text-center'
+        className='flex flex-col-reverse sm:flex-row justify-end relative h-screen w-full mx-auto md:text-left text-center'
         >
-        <motion.div className='space-y-10 px-0 md:px-10 lg:pt-60 lg:pl-60 w-full h-full md:w-[50%] lg:w-[75%]'
+        <motion.div className='space-y-10 p-4 sm:pt-60 md:px-10 lg:pl-60 w-full h-full md:w-[50%] lg:w-[75%]'
         initial={{
             opacity: 0,
             x: -200
@@ -55,15 +55,15 @@ const About = ({aboutInfo}: Props) => {
             viewport={{
                 once: true
             }}
-            className='w-full h-full md:pt-20 md:w-[50%] lg:w-[25%]'
+            className='w-full h-[50%] sm:h-[75%] md:pt-20 md:w-[50%] lg:w-[25%]'
         >
             <Image
                 
-                src='/hero.jpg'
+                src={aboutInfo.heroImage}
                 alt=''
                 width={200}
                 height={200}
-                className='w-full rounded-lg md:rounded-bl-lg md:rounded-none object-cover aspect-[2/3]'
+                className='w-full h-full rounded-b-lg sm:rounded-b-none sm:rounded-bl-lg md:rounded-none object-cover aspect-[2/3]'
             />
         </motion.div>
     </motion.div>

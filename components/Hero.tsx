@@ -15,13 +15,13 @@ function Hero({pageInfo}: Props) {
     const [text,count] = useTypewriter({
         words: [`Hey, I'm ${pageInfo.name}`],
         loop: 1,
-        delaySpeed: 2000,
+        delaySpeed: 1000,
         
     });
   return (
-    <div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
-        <div className='flex flex-col'>
-            <h1 className='text-5xl lg:text-7xl font-bold px-10 uppercase'>
+    <div className='h-screen flex flex-col space-y-12 lg:space-y-8 items-center justify-center text-center overflow-hidden'>
+        <div className='flex flex-col p-5'>
+            <h1 className='text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-bold lg:px-10 uppercase'>
                 {text}
             </h1>
             <motion.h2 
@@ -34,8 +34,8 @@ function Hero({pageInfo}: Props) {
                 y: 0,
             }}
             viewport={{ once: true }}
-            transition={{duration: 3}}
-            className='text-6xl uppercase font-bold text-gray-500 pb-2 px-10 tracking-[15px]'>{pageInfo.role}</motion.h2>
+            transition={{duration: 3.5}}
+            className='text-2xl sm:text-3xl lg:text-6xl uppercase font-bold text-gray-500 pb-2 lg:px-10 tracking-[15px]'>{pageInfo.role}</motion.h2>
         </div>
         <motion.div 
             initial={{

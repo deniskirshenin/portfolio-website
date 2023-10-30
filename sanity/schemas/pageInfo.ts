@@ -27,14 +27,6 @@ const pageInfo = {
       type: "string",
     },
     {
-      name: "profilePic",
-      title: "ProfilePic",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-    },
-    {
       name: "phone",
       title: "Phone",
       type: "string",

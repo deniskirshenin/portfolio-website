@@ -22,7 +22,6 @@ export default async function Home() {
   const socialsData = await getSocials();
   const pageInfoData = await getPageInfo();
   const projectsData = await getProjects();
-  const skillsData = await getSkills();
 
   return (
     <main className='bg-white text-black h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 relative'>
@@ -63,7 +62,7 @@ export default async function Home() {
       </section>
 
       <section id="projects" className='snap-start'>
-        <Projects projects={projectsData} skills={skillsData}/>
+        <Projects projects={projectsData} />
       </section>
 
       <section id="contact" className='snap-start'>

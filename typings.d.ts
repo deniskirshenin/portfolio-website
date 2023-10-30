@@ -1,3 +1,5 @@
+import { Slug } from "sanity";
+
 interface SanityBody {
     _createdAt: string;
     _id: string;
@@ -19,10 +21,9 @@ export interface PageInfo extends SanityBody {
     backgroundInformation: string;
     email: string;
     role: string;
-    heroImage: Image;
+    heroImage: string;
     name: string;
-    phoneNumber: string;
-    profilePic: Image;
+    phone: string;
 };
 
 export interface Technology extends SanityBody {
@@ -50,10 +51,12 @@ export interface Experience extends SanityBody {
 };
 
 export interface Project extends SanityBody {
-    title: string;
+    name: string;
+    slug: Slug;
     _type: "project";
     image: string;
     linkToBuild: string;
+    linkToDemo: string;
     summary: string;
     technologies: Technology[];
 };
